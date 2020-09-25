@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="button" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/button_primary_back</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/gilroy_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    //TextView-------------------------------------------
+    <style name="titleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/gilroy_bold</item>
+    </style>
+
+    <style name="mediumTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="largeTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+    <style name="smallTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    //-------------------------------EndTextView
+
+    <style name="FacbookButton" parent="AppButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginLeft">22dp</item>
+        <item name="android:layout_marginRight">31dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/gilroy_medium</item>
+    </style>
+    <style name="AppButton">
+        <item name="android:layout_height">47dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    //EditTextView----------------------------------------------
+    <style name="mediumEditView" parent="Widget.AppCompat.EditText">
+        <item name="android:padding">@dimen/_15sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+<!--    <style name="FullScreenDialogWithStatusBarColorAccent">-->
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+<!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+<!--        &lt;!&ndash;        <item name="android:windowNoTitle">true</item>&ndash;&gt;-->
+<!--        <item name="android:statusBarColor">#6F3E3E3E</item>-->
+
+
+<!--        &lt;!&ndash;<item name="android:windowAnimationStyle">@style/MateriDocumentAlertsActivityalDialogSheetAnimation</item>&ndash;&gt;-->
+<!--    </style>-->
+
+    <style name="CustomProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/custom_progress_bar_horizontal</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">10dip</item>
+    </style>
+
+
+</resources>

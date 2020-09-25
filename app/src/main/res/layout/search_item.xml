@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight_default="wrap">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/cons2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/threeDotsMenu">
+
+            <TextView
+                android:id="@+id/titleTv"
+                style="@style/largeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Victoria Cafe"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/addressTv"
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="Address: 58 Fairview street Austulia"
+                android:textColor="@color/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTv" />
+            <TextView
+                android:id="@+id/openHoursTv"
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="Open hours : 8am - 8pm"
+                android:textColor="@color/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_margin="@dimen/_5sdp"
+            android:id="@+id/threeDotsMenu"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/three_dots_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/5"
+            android:elevation="4dp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/postImage"
+            app:layout_constraintTop_toTopOf="@+id/postImage"
+            android:layout_marginRight="@dimen/_7sdp" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            app:layout_constraintTop_toBottomOf="@+id/cons2"
+            android:id="@+id/postImage"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/home_image_1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/cons3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/postImage">
+
+            <TextView
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/commentTv"
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:drawableStart="@drawable/comment"
+                android:drawableLeft="@drawable/comment"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_margin="@dimen/_10sdp"
+                    android:id="@+id/likeIv"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/heart"/>
+                <TextView
+                    android:id="@+id/likeTv"
+                    style="@style/mediumTextView"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="450" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/shareTv"
+                style="@style/mediumTextView"
+                android:layout_width="wrap_content"
+                android:gravity="end"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:drawableEnd="@drawable/share"
+                android:drawableRight="@drawable/share"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cons3"
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:background="@color/grey_300"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        app:cardCornerRadius="@dimen/_10sdp">-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="@dimen/_7sdp"-->
+<!--            tools:visibility="visible">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cardView"-->
+<!--                android:layout_width="@dimen/_80sdp"-->
+<!--                android:layout_height="@dimen/_80sdp"-->
+<!--                android:elevation="10dp"-->
+<!--                app:cardCornerRadius="10dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/roundedImageView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/dog_image" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/nameTv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:fontFamily="@font/gilroy_bold"-->
+<!--                android:maxLines="1"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="Dog Friendly Cafe"-->
+<!--                android:textColor="@color/black"-->
+<!--                style="@style/largeTextView"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/cardView"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/cardView"-->
+<!--                android:layout_marginLeft="8dp" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/locationIv"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/nameTv"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/cardView"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/addressTv"-->
+<!--                android:layout_marginHorizontal="@dimen/_3sdp"-->
+<!--                android:layout_width="@dimen/_20sdp"-->
+<!--                android:layout_height="@dimen/_20sdp"-->
+<!--                android:padding="@dimen/_3sdp"-->
+<!--                app:tint="@color/green"-->
+<!--                android:src="@drawable/location_pin"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/addressTv"-->
+<!--                android:layout_width="0dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                style="@style/smallTextView"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/gilroy_medium"-->
+<!--                android:maxLines="2"-->
+<!--                android:textColor="@color/textColorSecondary"-->
+<!--                android:text="Parkville VIC 3010, Australia sdfasdf dsfasdfasdfasdfas"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/locationIv"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/nameTv" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/openTimeTv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:maxLines="1"-->
+<!--                style="@style/smallTextView"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="Open : 10:00 AM"-->
+<!--                android:textColor="@color/appThemeColor"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/addressTv"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/addressTv" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/closeTimeTv"-->
+<!--                style="@style/smallTextView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:maxLines="1"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="Close : 12:00 PM"-->
+<!--                android:textColor="@color/red"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/addressTv"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/openTimeTv" />-->
+
+<!--            <ImageView-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_marginHorizontal="@dimen/_3sdp"-->
+<!--                android:background="@drawable/circle_gradinat"-->
+<!--                android:layout_width="@dimen/_30sdp"-->
+<!--                android:layout_height="@dimen/_30sdp"-->
+<!--                android:padding="@dimen/_7sdp"-->
+<!--                android:src="@drawable/coffee"/>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+</layout>

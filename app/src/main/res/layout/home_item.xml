@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight_default="wrap">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/cons1"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/roundedImageView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/user_demo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_border_color="@color/appThemeColor"
+                app:riv_border_width="1dp"
+                app:riv_oval="true" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:elevation="4dp"
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/threeDotsMenu"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/three_dots_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameTv"
+                style="@style/largeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Tara Suthria"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/threeDotsMenu"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:drawableStart="@drawable/time2"
+                android:drawableLeft="@drawable/time2"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="6hr"
+                android:textColor="@color/textColorSecondary"
+                app:layout_constraintEnd_toStartOf="@+id/threeDotsMenu"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cons1">
+
+            <TextView
+                android:id="@+id/titleTv"
+                style="@style/largeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Tara Suthria"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy...more"
+                android:textColor="@color/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/5"
+            android:elevation="4dp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/postImage"
+            app:layout_constraintTop_toTopOf="@+id/postImage"
+            android:layout_marginRight="@dimen/_7sdp" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            app:layout_constraintTop_toBottomOf="@+id/cons2"
+            android:id="@+id/postImage"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/home_image_1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/cons3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/postImage">
+
+            <TextView
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/commentTv"
+                style="@style/mediumTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:drawableStart="@drawable/comment"
+                android:drawableLeft="@drawable/comment"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_margin="@dimen/_10sdp"
+                    android:id="@+id/likeIv"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/heart"/>
+                <TextView
+                    android:id="@+id/likeTv"
+                    style="@style/mediumTextView"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="450" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/shareTv"
+                style="@style/mediumTextView"
+                android:layout_width="wrap_content"
+                android:gravity="end"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:drawableEnd="@drawable/share"
+                android:drawableRight="@drawable/share"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cons3"
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:background="@color/grey_300"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>

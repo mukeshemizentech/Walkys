@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.walky.common.activity.NewPostActivity">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/header"
+            android:id="@+id/header"/>
+
+
+<!--        <com.makeramen.roundedimageview.RoundedImageView-->
+<!--            android:layout_width="@dimen/_80sdp"-->
+<!--            android:layout_height="@dimen/_80sdp"-->
+<!--            android:src="@drawable/add_post_icon"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:riv_corner_radius="@dimen/_5sdp"-->
+<!--            android:id="@+id/profilePic"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/header"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:layout_marginTop="@dimen/_20sdp"-->
+<!--            app:riv_border_color="@color/appThemeColor"-->
+<!--            app:riv_border_width="@dimen/_2sdp"/>-->
+
+
+        <LinearLayout
+
+            android:id="@+id/addImageLL"
+            android:paddingRight="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:background="@drawable/edit_text_back"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/addVideotLL"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp">
+            <ImageView
+                android:scaleType="centerInside"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/camera"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:tint="#808080" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameImageText"
+                android:text="@string/images"/>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/addVideotLL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/edit_text_back"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingRight="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/addImageLL"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/video_icon" />
+
+            <TextView
+                android:id="@+id/nameAddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Videos" />
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/selectImageRV"
+            app:layout_constraintBottom_toBottomOf="@+id/selectImageRV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CircularProgressbar"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="#258AF6A5"
+            android:layout_marginVertical="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/addVideotLL"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/selectImageRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
+            tools:listitem="@layout/select_image_item"/>
+        <EditText
+            android:id="@+id/captionEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_back"
+            app:layout_constraintTop_toBottomOf="@+id/selectImageRV"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:hint="Write a caption..."
+            android:gravity="start"
+            style="@style/mediumEditView"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginHorizontal="@dimen/_20sdp"/>
+        <EditText
+            android:id="@+id/writeEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_back"
+            app:layout_constraintTop_toBottomOf="@+id/captionEt"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:hint="Write a message..."
+            android:minLines="4"
+            android:gravity="start"
+            style="@style/mediumEditView"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginHorizontal="@dimen/_20sdp"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons1"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:layout_constraintBottom_toTopOf="@+id/cons2"
+            app:layout_constraintTop_toBottomOf="@+id/writeEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/border_grey_round">
+
+            <ImageView
+                android:id="@+id/tagIv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/view1"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/pawprint"/>
+
+            <TextView
+                style="@style/mediumTextView"
+                app:layout_constraintStart_toEndOf="@+id/tagIv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="0dp"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/tag_pet"
+                android:id="@+id/tagTv"
+                />
+            <View
+                app:layout_constraintTop_toBottomOf="@+id/tagTv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_200"
+                android:id="@+id/view1"/>
+
+            <ImageView
+                android:id="@+id/tagPeopleIv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/group"/>
+
+            <TextView
+
+                style="@style/mediumTextView"
+                app:layout_constraintStart_toEndOf="@+id/tagIv"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/tag_people"
+                android:id="@+id/tagPeopleTv"
+                />
+            <View
+                app:layout_constraintTop_toBottomOf="@+id/tagPeopleTv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_200"
+                android:id="@+id/view2"/>
+            <ImageView
+                android:id="@+id/tagLocationIv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/location_pin"
+                app:tint="@color/red" />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                style="@style/mediumTextView"
+                app:layout_constraintStart_toEndOf="@+id/tagLocationIv"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/tag_location"
+                android:id="@+id/tagLocationTv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons2"
+            app:layout_constraintTop_toBottomOf="@+id/cons1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#f2f2f2">
+
+            <Button
+                android:id="@+id/postBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:elevation="6dp"
+                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                style="@style/button"
+                android:text="Post"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@drawable/bottom_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--            <com.cooltechworks.views.shimmer.ShimmerRecyclerView-->
+            <!--                android:visibility="gone"-->
+            <!--                android:paddingStart="@dimen/_5sdp"-->
+            <!--                android:id="@+id/recyclerViewTop"-->
+            <!--                android:layout_width="match_parent"-->
+
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                android:layout_marginStart="@dimen/_20sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_20sdp"-->
+            <!--                app:layout_constrainedHeight="true"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/seachEt"-->
+            <!--                app:shimmer_demo_layout="@layout/home_top_item"-->
+            <!--                app:shimmer_demo_layout_manager_type="linear_horizontal"-->
+
+            <!--                android:layout_marginBottom="@dimen/_10sdp"-->
+            <!--                tools:itemCount="10"-->
+            <!--                tools:listitem="@layout/home_top_item"-->
+            <!--                android:paddingLeft="@dimen/_5sdp" />-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/round_white_withoutborder"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <ImageView
+                    android:id="@+id/searchIv"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/search_b" />
+                <EditText
+                    android:id="@+id/seachEt"
+                    style="@style/mediumEditView"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="Type here"
+                    android:layout_width="0dp"
+                    android:textSize="14sp"
+                    android:background="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/crossIv"
+                    app:layout_constraintStart_toEndOf="@+id/searchIv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/crossIv"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:background="@drawable/circle_grey"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/places_ic_clear" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <HorizontalScrollView
+            android:id="@+id/horizontalView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/white_round"
+            android:paddingHorizontal="3dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" >
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:background="@drawable/button_primary_rect"
+                    android:id="@+id/nearYouLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_margin="3dp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:text="left">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/nearby"
+                        app:tint="@color/appThemeColor" />
+
+                    <TextView
+                        android:id="@+id/nearYouTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/near_you"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout
+                    android:background="@drawable/border_primary"
+                    android:id="@+id/cafeLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_margin="3dp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:text="left">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/coffee" />
+
+                    <TextView
+                        android:id="@+id/cafeTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/cafes"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/border_primary"
+                    android:id="@+id/beachesLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:text="right">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/beaches" />
+
+                    <TextView
+                        android:id="@+id/beachesTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="Beaches"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/border_primary"
+                    android:id="@+id/parkLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center"
+                    android:layout_margin="3dp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/park" />
+
+                    <TextView
+                        android:id="@+id/parksTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/parks"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/border_primary"
+                    android:id="@+id/userLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center"
+                    android:layout_margin="3dp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/user"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/userTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/user"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/border_primary"
+                    android:id="@+id/petLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center"
+                    android:layout_margin="3dp"
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:background="@drawable/circle_gradinat"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/dogwakler"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/petTv"
+                        style="@style/mediumTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/pets"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+        <View
+            android:id="@+id/lineView"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@color/grey_200"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchRecycleFirst"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineView"
+            tools:itemCount="5"
+            tools:listitem="@layout/search_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

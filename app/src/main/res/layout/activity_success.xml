@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.SuccessActivity">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <include-->
+<!--            layout="@layout/header"-->
+<!--            android:id="@+id/header" />-->
+
+
+
+        <com.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".5"
+            app:shape_arc_position="bottom"
+            app:shape_arc_cropDirection="inside"
+            app:shape_arc_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/success_back_color"/>
+        </com.github.florent37.shapeofview.shapes.ArcView>
+
+
+        <ImageView
+            android:id="@+id/addPostBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_post"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/appThemeColor" />
+
+
+        <ImageView
+            android:id="@+id/successIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/success"
+            android:layout_marginBottom="@dimen/_45sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/successIv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:id="@+id/successTv"
+            style="@style/titleTextView"
+            android:text="@string/successful"/>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/successTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:id="@+id/successDesTv"
+            style="@style/mediumTextView"
+            android:text="Great your walk is completed!" />
+
+        <Button
+            android:id="@+id/buttonHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successDesTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:elevation="6dp"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            style="@style/button"
+            android:text="Go To Home" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

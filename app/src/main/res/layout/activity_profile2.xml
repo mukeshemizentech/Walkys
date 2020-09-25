@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/htab_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_round"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:background="@color/white"
+                android:id="@+id/htab_collapse_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@drawable/bottom_round"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_round"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/titleTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:textColor="@color/white"
+                        android:id="@+id/followersCountTv"
+                        app:layout_constraintTop_toTopOf="@+id/profilePic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+                        app:layout_constraintEnd_toStartOf="@+id/profilePic"
+                        android:text="550"
+                        />
+                    <TextView
+                        style="@style/smallTextView"
+                        android:translationY="-10dp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textColor="@color/white"
+                        android:id="@+id/followersTv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/followersCountTv"
+                        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+                        app:layout_constraintEnd_toStartOf="@+id/profilePic"
+                        android:text="@string/followers"
+                        />
+
+                    <TextView
+                        style="@style/titleTextView"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:textColor="@color/white"
+                        android:id="@+id/followingCountTv"
+                        app:layout_constraintTop_toTopOf="@+id/profilePic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+                        app:layout_constraintStart_toEndOf="@+id/profilePic"
+                        android:text="650"
+                        />
+                    <TextView
+                        android:translationY="-10dp"
+                        style="@style/smallTextView"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textColor="@color/white"
+                        android:id="@+id/followingTv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/followingCountTv"
+                        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+                        app:layout_constraintStart_toEndOf="@+id/profilePic"
+                        android:text="@string/following"
+                        />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:layout_marginTop="@dimen/_100sdp"
+                        app:riv_oval="true"
+                        android:id="@+id/profilePic"
+                        android:background="@drawable/profile_back"
+                        android:padding="@dimen/_15sdp"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_102sdp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/rabecca" />
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        app:layout_constraintWidth_percent="0.5"
+                        android:id="@+id/cons1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/followersTv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:layout_marginHorizontal="@dimen/_60sdp">
+                        <!--                        <androidx.cardview.widget.CardView-->
+                        <!--                            android:id="@+id/customProgress"-->
+                        <!--                            android:layout_width="@dimen/_100sdp"-->
+                        <!--                            android:layout_height="@dimen/_7sdp"-->
+                        <!--                            android:translationX="-5dp"-->
+                        <!--                            app:cardCornerRadius="@dimen/_5sdp"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            app:layout_constraintStart_toEndOf="@+id/bugIv"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+                        <!--                            <androidx.percentlayout.widget.PercentFrameLayout-->
+                        <!--                                android:id="@+id/container"-->
+                        <!--                                android:animateLayoutChanges="true"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content">-->
+
+                        <!--                                <com.makeramen.roundedimageview.RoundedImageView-->
+                        <!--                                    app:riv_corner_radius="@dimen/_5sdp"-->
+                        <!--                                    app:layout_widthPercent="30%"-->
+                        <!--                                    android:id="@+id/progressBarIv"-->
+                        <!--                                    android:layout_width="match_parent"-->
+                        <!--                                    android:layout_height="match_parent"-->
+                        <!--                                    android:scaleType="centerCrop"-->
+                        <!--                                    android:src="@drawable/progress_bar"/>-->
+                        <!--                            </androidx.percentlayout.widget.PercentFrameLayout>-->
+
+
+                        <!--                        </androidx.cardview.widget.CardView>-->
+                        <ProgressBar
+                            android:id="@+id/customProgress"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/rateTv"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:progress="50"
+                            android:max="100"
+                            android:translationX="-10dp"
+                            style="@style/CustomProgressBar"
+                            android:indeterminateBehavior="repeat"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_20sdp"/>
+
+                        <!--                        <ImageView-->
+                        <!--                            android:elevation="4dp"-->
+                        <!--                            android:id="@+id/bugIv"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            android:src="@drawable/circle_white" />-->
+
+                        <TextView
+
+                            android:background="@drawable/circle_white"
+                            style="@style/mediumTextView"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_width="@dimen/_30sdp"
+                            android:textSize="@dimen/_9ssp"
+                            android:fontFamily="@font/gilroy_bold"
+                            android:gravity="center"
+                            android:textColor="@color/colorPrimary"
+                            android:id="@+id/rateTv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="30"
+                            android:layout_marginLeft="@dimen/_1sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cons1"
+                        app:shimmer_demo_layout="@layout/dog_item"
+                        app:shimmer_demo_layout_manager_type="linear_horizontal"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/dog_item" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/htab_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@drawable/bottom_round"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    android:paddingRight="@dimen/_10sdp">
+                    <include
+                        android:id="@+id/header"
+                        layout="@layout/header" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:background="@color/white"
+                android:id="@+id/userProfileTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?actionBarSize"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/appThemeColor"
+                app:tabIndicatorHeight="1dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/appThemeColor"
+                app:tabTextColor="@color/textColorSecondary" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nest_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_vertical"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!--            android:layout_marginBottom="@dimen/_100sdp"-->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/userProfileViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="com.sample.behavior.AdaptiveHeightScrollingViewBehavior" />
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/cons1"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/userPic"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/user_demo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_border_color="@color/appThemeColor"
+            app:riv_border_width="1dp"
+            app:riv_oval="true" />
+
+
+
+        <TextView
+            android:id="@+id/nameTv"
+            style="@style/largeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="Tara Suthria"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/userPic"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toEndOf="@+id/userPic"
+            app:layout_constraintTop_toBottomOf="@+id/nameTv">
+
+            <TextView
+                android:id="@+id/dateTv"
+                android:textSize="@dimen/_9ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="28 May 2020"
+                android:textColor="@color/textColorSecondary"
+                app:drawableStartCompat="@drawable/calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/timeTv"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_5sdp"
+                android:id="@+id/timeTv"
+                android:textSize="@dimen/_9ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="2 Days"
+                android:textColor="@color/textColorSecondary"
+                app:drawableStartCompat="@drawable/time2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dateTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/_5sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:id="@+id/serviceOnTv"
+            android:textSize="@dimen/_9ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="Servicing on : 25.30 "
+            android:textColor="@color/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@+id/userPic"
+            app:layout_constraintTop_toBottomOf="@+id/cons2"
+            android:layout_marginLeft="@dimen/_5sdp" />
+
+        <TextView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:id="@+id/myCommissionTv"
+            android:textSize="@dimen/_9ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="Commission Earned : $100"
+            android:textColor="@color/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@+id/userPic"
+            app:layout_constraintTop_toBottomOf="@+id/serviceOnTv"
+            android:layout_marginLeft="@dimen/_5sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

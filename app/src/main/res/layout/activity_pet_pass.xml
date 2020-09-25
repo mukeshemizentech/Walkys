@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.PetPassActivity">
+
+    <data></data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/petPassPic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:src="@drawable/pet_pass"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_margin="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/petPassPic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/surprise"/>
+
+                <TextView
+                    android:id="@+id/petPassTv"
+                    style="@style/largeTextView"
+                    android:layout_width="0dp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/butcherman"
+                    android:text="Pet \nPass"
+                    android:textSize="20sp"
+                    android:lineSpacingMultiplier="0.6"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/petPassPic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/petPassPic" />
+
+                <TextView
+                    android:id="@+id/offerDetailTv"
+                    style="@style/largeTextView"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Offer Details"
+                    android:textColor="@color/textColorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/petPassPic" />
+
+                <TextView
+                    android:id="@+id/youCanPlayTv"
+                    style="@style/mediumTextView"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="You can play Mini-games also"
+                    android:textColor="@color/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/offerDetailTv" />
+
+                <TextView
+                    android:fontFamily="@font/gilroy_medium"
+                    android:id="@+id/offerDetailDescriptionTv"
+                    style="@style/mediumTextView"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+                    android:textColor="@color/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/youCanPlayTv" />
+
+                <TextView
+                    android:fontFamily="@font/gilroy_medium"
+                    android:id="@+id/termAndConditionTv"
+                    style="@style/largeTextView"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Terms and Conditions"
+                    android:textColor="@color/textColorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/offerDetailDescriptionTv" />
+
+                <ImageView
+                    android:id="@+id/pointIcon1"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/right_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/termAndConditionTv"
+                    app:tint="@color/textColorSecondary" />
+
+                <TextView
+                    android:fontFamily="@font/gilroy_medium"
+                    android:id="@+id/point1Tv"
+                    style="@style/mediumTextView"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="start|top"
+                    android:text="When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+                    android:textColor="@color/textColorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pointIcon1"
+                    app:layout_constraintTop_toBottomOf="@+id/termAndConditionTv" />
+
+                <ImageView
+                    android:id="@+id/pointIcon2"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/right_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/point1Tv"
+                    app:tint="@color/textColorSecondary" />
+
+                <TextView
+                    android:fontFamily="@font/gilroy_medium"
+                    android:id="@+id/point2Tv"
+                    style="@style/mediumTextView"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="start|top"
+                    android:text="More recently with desktop"
+                    android:textColor="@color/textColorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pointIcon2"
+                    app:layout_constraintTop_toBottomOf="@+id/point1Tv" />
+
+                <ImageView
+                    android:id="@+id/pointIcon3"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/right_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/point2Tv"
+                    app:tint="@color/textColorSecondary" />
+
+                <TextView
+                    android:fontFamily="@font/gilroy_medium"
+                    android:id="@+id/point3Tv"
+                    style="@style/mediumTextView"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="start|top"
+                    android:text="Contrary to popular belief, Lorem Ipsum is not simply"
+                    android:textColor="@color/textColorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pointIcon3"
+                    app:layout_constraintTop_toBottomOf="@+id/point2Tv" />
+
+                <Button
+                    android:id="@+id/buttonBuyPetPass"
+                    style="@style/button"
+                    android:layout_width="0dp"
+                    android:text="Buy Pet Pass"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/point3Tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

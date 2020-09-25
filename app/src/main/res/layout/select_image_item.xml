@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_width="@dimen/_75sdp"
+        android:layout_height="@dimen/_75sdp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_margin="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp">
+<!--                <pl.droidsonroids.gif.GifImageView-->
+<!--                    android:id="@+id/selectImage"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:src="@drawable/home_image_2"/>-->
+                <ImageView
+                    android:id="@+id/selectImage"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/home_image_2" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/playIv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle_white"
+            android:src="@drawable/play_icon"
+           android:layout_centerInParent="true"
+            app:tint="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/deleteImage"
+            android:layout_alignParentEnd="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:padding="3dp"
+            android:background="@drawable/circle_primary"
+            android:src="@drawable/places_ic_clear"
+            android:layout_alignParentRight="true"
+            app:tint="@color/white" />
+    </RelativeLayout>
+</layout>

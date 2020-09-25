@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.HomeFragment">
+
+    <data></data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:background="@color/white"
+            android:layoutAnimation="@anim/layout_animation"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constrainedHeight="true"
+            android:layout_below="@+id/tabBar"
+            app:shimmer_demo_layout="@layout/home_item"
+            tools:itemCount="3"
+            tools:listitem="@layout/home_item" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/followLL"
+            android:background="@color/white"
+            android:layout_below="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <include
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/followEmpty"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                layout="@layout/empty_layout"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@drawable/bottom_round">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tabBar"
+            android:layout_below="@+id/view"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                android:id="@+id/followingTv"
+                android:layout_width="0dp"
+                style="@style/largeTextView"
+                android:text="@string/following"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/gilroy_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="@dimen/_5sdp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/popularTv"
+                />
+            <View
+                android:id="@+id/followingView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="2dp"
+                style="@style/mediumTextView"
+                android:background="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/followingTv"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/popularTv"
+                />
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/popularTv"
+                android:layout_width="0dp"
+                style="@style/largeTextView"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="@string/popular"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/textColorSecondary"
+                app:layout_constraintStart_toEndOf="@+id/followingTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <View
+                android:visibility="gone"
+                android:id="@+id/popularView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="2dp"
+                style="@style/mediumTextView"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/popularTv"
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toEndOf="@+id/followingTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</layout>

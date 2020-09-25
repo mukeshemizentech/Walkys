@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dogNameTv"
+                style="@style/smallTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1.3"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="start"
+                android:text="Tuffy"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginRight="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/dogBreedTv"
+                style="@style/smallTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="start"
+                android:text="JermanSeferd"
+                android:textColor="@color/textColorPrimary" />
+
+
+            <TextView
+                android:id="@+id/distanceTv"
+                style="@style/smallTextView"
+                android:layout_width="0dp"
+                android:layout_weight=".7"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="start"
+                android:text="425 KM"
+                android:textColor="@color/textColorPrimary" />
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_height="wrap_content">-->
+
+                <TextView
+                    android:id="@+id/ratingTv"
+                    style="@style/smallTextView"
+                    android:layout_width="0dp"
+                    android:layout_weight=".7"
+                    android:layout_height="wrap_content"
+                    android:background="@color/appThemeColor"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="center"
+                    android:text="★ | 4.5"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="@color/white" />
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+        </LinearLayout>
+        <View
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            android:layout_marginVertical="3dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

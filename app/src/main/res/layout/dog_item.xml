@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.makeramen.roundedimageview.RoundedImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:riv_oval="true"
+            android:scaleType="centerCrop"
+            app:riv_border_color="@color/white"
+            app:riv_border_width="2dp"
+            app:riv_corner_radius="@dimen/_20sdp"
+            android:id="@+id/dogPic"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/dog_image" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/dogPic"
+            app:layout_constraintStart_toStartOf="@+id/dogPic"
+            app:layout_constraintEnd_toEndOf="@+id/dogPic"
+            android:id="@+id/dogNameTv"
+            android:layout_width="wrap_content"
+            android:maxWidth="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Ben"
+            style="@style/smallTextView"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gilroy_medium"
+            android:layout_marginTop="3dp" />
+
+        <ImageView
+            android:id="@+id/selectIv"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/select_item"
+            android:background="@drawable/round_prim"
+            app:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
