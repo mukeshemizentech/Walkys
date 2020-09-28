@@ -10,6 +10,7 @@ import com.makeramen.roundedimageview.RoundedImageView
 import com.walky.data.db.enttities.Message
 import com.walky.responses.HomeResponse
 import com.walky.walkys.R
+import com.walky.walkys.ui.chat.ChatActivity.Companion.isGroup
 
 
 class ChatAdapter(context: Context, messageList: List<Message>) :
@@ -71,9 +72,6 @@ class ChatAdapter(context: Context, messageList: List<Message>) :
         fun bind(message: Message) {
             messageText.text = message.message
             timeText.text=message.timeMsg
-//
-//            // Format the stored timestamp into a readable String using method.
-//            timeText.setText(Utils.formatDateTime(message.getCreatedAt()))
         }
 
     }
@@ -89,6 +87,13 @@ class ChatAdapter(context: Context, messageList: List<Message>) :
         fun bind(message: Message) {
             messageText.text = message.message
             timeText.text=message.timeMsg
+            if (isGroup=="2"|| isGroup=="4") {
+                profileImage.visibility = View.VISIBLE
+                nameText.visibility=View.VISIBLE
+            }else{
+                profileImage.visibility = View.GONE
+                nameText.visibility=View.GONE
+            }
 //
 //            // Format the stored timestamp into a readable String using method.
 //            timeText.setText(Utils.formatDateTime(message.getCreatedAt()))

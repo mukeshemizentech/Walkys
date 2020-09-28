@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/htab_maincontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/bottom_round"
+            android:paddingEnd="@dimen/_10sdp"
+            app:layout_collapseMode="pin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:paddingRight="@dimen/_10sdp">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/header" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/uploadCons"
+            android:background="@color/grey_200"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/upload"
+                android:id="@+id/uploadIv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/uploadTv"
+                style="@style/mediumTextView"
+                android:text="Upload Dog Images"
+                app:layout_constraintTop_toBottomOf="@+id/uploadIv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:layout_marginVertical="@dimen/_5sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginVertical="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/uploadCons"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/selectImageRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
+            tools:listitem="@layout/select_image_item"/>
+
+        <TextView
+            style="@style/largeTextView"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintTop_toBottomOf="@+id/selectImageRV"
+            android:text="Dog information"
+            android:id="@+id/dogInfoTv"
+            android:textColor="@color/textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_10sdp" />
+
+        <EditText
+            style="@style/mediumEditView"
+            android:id="@+id/dogNameEt"
+            app:layout_constraintTop_toBottomOf="@+id/dogInfoTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="10dp"
+            android:hint="@string/dog_name"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:background="@drawable/edit_text_back" />
+
+
+        <LinearLayout
+            android:id="@+id/dogBreadLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dogNameEt"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/edit_text_back"
+            android:layout_marginHorizontal="@dimen/_15ssp">
+            <Spinner
+                android:id="@+id/dogBreadsSpinner"
+                android:padding="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/dogBreads"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dogColorLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dogBreadLL"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/edit_text_back"
+            android:layout_marginHorizontal="@dimen/_15ssp">
+            <Spinner
+                android:id="@+id/dogColorSpinner"
+                android:padding="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/dogColors"/>
+        </LinearLayout>
+
+        <Button
+            style="@style/button"
+            app:layout_constraintTop_toBottomOf="@+id/dogColorLL"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:id="@+id/subMitBtn"
+            android:text="@string/submit"
+            android:fontFamily="@font/gilroy_bold"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

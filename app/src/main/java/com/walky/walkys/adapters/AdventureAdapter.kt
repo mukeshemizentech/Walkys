@@ -33,17 +33,17 @@ class AdventureAdapter(context: Context, arrayList: ArrayList<HomeResponse>) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.binding.map.onCreate(null)
-        viewHolder.binding.map.getMapAsync(OnMapReadyCallback { googleMap ->
-            mMap = googleMap
-//            mMap.uiSettings.isZoomControlsEnabled = false
-            val lat1 = "1.344376".toDouble()
-            val lng1 = "103.862162".toDouble()
-            val bord = LatLng(lat1, lng1)
-//            mMap.addMarker(MarkerOptions().position(bord).title("Marker on board"))
-//            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(bord, 13.0f))
-        })
-        viewHolder.binding.map.postInvalidate()
+//        viewHolder.binding.map.onCreate(null)
+//        viewHolder.binding.map.getMapAsync(OnMapReadyCallback { googleMap ->
+//            mMap = googleMap
+////            mMap.uiSettings.isZoomControlsEnabled = false
+//            val lat1 = "1.344376".toDouble()
+//            val lng1 = "103.862162".toDouble()
+//            val bord = LatLng(lat1, lng1)
+////            mMap.addMarker(MarkerOptions().position(bord).title("Marker on board"))
+////            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(bord, 13.0f))
+//        })
+//        viewHolder.binding.map.postInvalidate()
 
     }
     override fun getItemCount(): Int {

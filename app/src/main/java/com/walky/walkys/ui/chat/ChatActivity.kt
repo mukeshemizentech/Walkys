@@ -16,6 +16,7 @@ import com.walky.data.db.enttities.Message
 import com.walky.utils.Utils
 import com.walky.utils.toast
 import com.walky.walkys.R
+import com.walky.walkys.activities.CreateGroupActivity
 import com.walky.walkys.activities.NewPostActivity
 import com.walky.walkys.adapters.ChatAdapter
 import com.walky.walkys.databinding.ActivityChatBinding
@@ -31,6 +32,10 @@ class ChatActivity : AppCompatActivity() {
     private var messageViewModel: MessageViewModel? = null
     lateinit var layoutManager: LinearLayoutManager
 
+    companion object {
+        var isGroup: String? = ""
+    }
+
     lateinit var binding: ActivityChatBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +47,19 @@ class ChatActivity : AppCompatActivity() {
         })
 
 
+        if (intent.extras != null) {
+            isGroup = intent.getStringExtra("position")
+            if (isGroup == "2" || isGroup == "4")
+                binding.header.groupMembersName.visibility = View.VISIBLE
+            else
+                binding.header.groupMembersName.visibility = View.GONE
+        } else
+            binding.header.groupMembersName.visibility = View.GONE
+
+        binding.header.chatHeaderTvCons.setOnClickListener {
+            if (isGroup == "2" || isGroup == "4")
+                startActivity(Intent(this@ChatActivity, CreateGroupActivity::class.java))
+        }
 
         binding.header.titleTv.text = "Carlos Micbride"
         binding.header.optionMenu.setImageResource(R.drawable.add_post)
@@ -49,6 +67,7 @@ class ChatActivity : AppCompatActivity() {
         binding.header.homeMenu.setImageResource(R.drawable.back)
         Utils.tintColor(this, binding.header.homeMenu, R.color.white)
         binding.header.homeMenu.setOnClickListener { finish() }
+
 
         binding.header.optionMenu.setOnClickListener {
             startActivity(Intent(this@ChatActivity, NewPostActivity::class.java))

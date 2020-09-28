@@ -3,6 +3,7 @@ package com.walky.walkys.adapters
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +25,21 @@ class UserListAdapter(context: Context, arrayList: ArrayList<HomeResponse>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
+        if(position==2 || position==4){
+            viewHolder.binding.groupMemberIv1.visibility = View.VISIBLE
+            viewHolder.binding.groupMemberIv2.visibility = View.VISIBLE
+            viewHolder.binding.groupMemberCountTv.visibility = View.VISIBLE
+            viewHolder.binding.profileIv.visibility= View.GONE
+        }else{
+            viewHolder.binding.groupMemberIv1.visibility = View.GONE
+            viewHolder.binding.groupMemberIv2.visibility = View.GONE
+            viewHolder.binding.groupMemberCountTv.visibility = View.GONE
+            viewHolder.binding.profileIv.visibility = View.VISIBLE
+        }
+
         viewHolder.itemView.setOnClickListener {
+
+
 //            if (activity == "mapFragment") {
 //                selected_position = position
 //                notifyDataSetChanged()
@@ -33,7 +48,7 @@ class UserListAdapter(context: Context, arrayList: ArrayList<HomeResponse>) :
                     Intent(
                         context,
                         ChatActivity::class.java
-                    )
+                    ).putExtra("position",position.toString())
                 )
             }
 //        }

@@ -82,5 +82,19 @@
     <string name="following_list">Following List</string>
     <string name="follower_and_following"><![CDATA[Follower & Following]]></string>
     <string name="create_group">Create Group</string>
+    <string name="submit">Submit</string>
+    <string name="current_password">Current password</string>
+
+    <string-array name="dogColors">
+        <item>Dog Colors</item>
+        <item>Black</item>
+        <item>White</item>
+    </string-array>
+    <string-array name="dogBreads">
+        <item>Dog Breads</item>
+        <item>Dog 1</item>
+        <item>Dog 2</item>
+    </string-array>
+
 
 </resources>

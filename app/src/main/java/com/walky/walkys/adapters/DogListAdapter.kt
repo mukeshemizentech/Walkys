@@ -9,27 +9,23 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.walky.responses.HomeResponse
 import com.walky.walkys.R
+import com.walky.walkys.activities.AddDogActivity
 import com.walky.walkys.activities.PetProfileActivity
 import com.walky.walkys.databinding.DogItemBinding
 import java.util.*
 
 class DogListAdapter(context: Context, arrayList: ArrayList<HomeResponse>, activity: String) :
     RecyclerView.Adapter<DogListAdapter.ViewHolder>() {
-    var arrayList: ArrayList<HomeResponse>
-    private val context: Context
-    private val activity: String
+    var arrayList: ArrayList<HomeResponse> = arrayList
+    private val context: Context = context
+    private val activity: String = activity
 
-    var selected_position = -1
-    companion object{
+    private var selected_position = -1
+
+    companion object {
         var isSelected: Boolean? = false
     }
 
-
-    init {
-        this.arrayList = arrayList
-        this.context = context
-        this.activity = activity;
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: DogItemBinding =
@@ -37,8 +33,17 @@ class DogListAdapter(context: Context, arrayList: ArrayList<HomeResponse>, activ
         return ViewHolder(binding)
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.binding.dogNameTv.setText((position + 1).toString() + ".Ben")
+        if (position == 0) {
+            viewHolder.binding.dogPic.setImageResource(R.drawable.plus)
+            viewHolder.binding.dogNameTv.text = "Add Dog"
+        }else{
+            viewHolder.binding.dogNameTv.text = (position + 1).toString() + ".Ben"
+        }
 
         if (activity == "mapFragment") {
             if (selected_position == position) {
@@ -49,31 +54,41 @@ class DogListAdapter(context: Context, arrayList: ArrayList<HomeResponse>, activ
             }
         }
         viewHolder.itemView.setOnClickListener {
-            if (activity == "mapFragment") {
-                selected_position = position
-                notifyDataSetChanged()
-            } else {
-                context.startActivity(
-                    Intent(
-                        context,
-                        PetProfileActivity::class.java
+            when {
+                position == 0 -> {
+                    context.startActivity(
+                        Intent(
+                            context,
+                            AddDogActivity::class.java
+                        )
                     )
-                )
+                }
+                activity == "mapFragment" -> {
+                    selected_position = position
+                    notifyDataSetChanged()
+                }
+                else -> {
+                    context.startActivity(
+                        Intent(
+                            context,
+                            PetProfileActivity::class.java
+                        )
+                    )
+                }
             }
         }
+
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return if (arrayList.size>0) arrayList.size else 3
     }
 
     inner class ViewHolder(binding: DogItemBinding) : RecyclerView.ViewHolder(binding.getRoot()) {
-        var binding: DogItemBinding
+        var binding: DogItemBinding = binding
 
         init {
-            this.binding = binding
             if (activity == "mapFragment") {
-
                 binding.dogNameTv.setTextColor(context.resources.getColor(R.color.textColorPrimary))
             } else {
                 binding.selectIv.visibility = View.GONE

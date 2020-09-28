@@ -8,41 +8,90 @@
         android:padding="@dimen/_10sdp">
 
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/profileIv"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/dog_image"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/groupCons"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
-            app:riv_oval="true"
-            app:riv_border_width="1dp"
-            app:riv_border_color="@color/appThemeColor"
-            android:scaleType="centerCrop"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:visibility="gone"
+                android:id="@+id/profileIv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/dog_image"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:riv_oval="true"
+                app:riv_border_width="1dp"
+                app:riv_border_color="@color/appThemeColor"
+                android:scaleType="centerCrop"/>
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/groupMemberIv1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/user_demo"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:riv_oval="true"
+                app:riv_border_width="1dp"
+                app:riv_border_color="@color/appThemeColor"
+                android:scaleType="centerCrop"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/groupMemberIv2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/dog_image"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                app:riv_oval="true"
+                app:riv_border_width="1dp"
+                app:riv_border_color="@color/appThemeColor"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/groupMemberCountTv"
+                style="@style/smallTextView"
+                android:text="+100"
+                android:gravity="center"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:textSize="@dimen/_7ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/circle_primary"
+                android:textColor="@color/white"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
             android:singleLine="true"
            style="@style/mediumTextView"
             android:text="Carlos Micbride"
             android:id="@+id/nameTv"
             android:layout_marginStart="@dimen/_10sdp"
-            app:layout_constraintStart_toEndOf="@+id/profileIv"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/groupCons"
+            app:layout_constraintTop_toTopOf="@+id/groupCons"
             android:layout_marginLeft="@dimen/_10sdp" />
         <TextView
             android:singleLine="true"
             android:layout_marginStart="@dimen/_10sdp"
             style="@style/smallTextView"
-            android:text="Hey! whatsapp what was... 2 hr"
+            android:text="Hey! whatsapp what was good application f... 2 hr"
             android:id="@+id/messageTv"
-            app:layout_constraintStart_toEndOf="@+id/profileIv"
+            app:layout_constraintStart_toEndOf="@+id/groupCons"
             app:layout_constraintTop_toBottomOf="@+id/nameTv"
             android:layout_marginLeft="@dimen/_10sdp" />
 
         <View
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/profileIv"
+            app:layout_constraintTop_toBottomOf="@+id/groupCons"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
             android:layout_height="1dp"

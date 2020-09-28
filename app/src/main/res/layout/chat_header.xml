@@ -35,22 +35,44 @@
             android:scaleType="centerCrop"
             android:src="@drawable/rabecca"/>
 
-        <TextView
-            android:layout_marginStart="@dimen/_5sdp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chatHeaderTvCons"
             android:layout_width="0dp"
-            android:padding="@dimen/_7sdp"
-            android:text="@string/app_name"
-            android:gravity="start"
-            android:textColor="@color/white"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/optionMenu"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/userOrGroupIcon"
-            style="@style/largeTextView"
-            android:id="@+id/titleTv"
-            android:singleLine="true"
-            android:layout_marginLeft="@dimen/_5sdp" />
+            app:layout_constraintStart_toEndOf="@+id/userOrGroupIcon">
+
+            <TextView
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:gravity="start"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/largeTextView"
+                android:id="@+id/titleTv"
+                android:singleLine="true" />
+            <TextView
+                app:layout_constraintTop_toBottomOf="@+id/titleTv"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rocky, john, carlie, rony ,dev , android, java , fullter"
+                android:gravity="start"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/smallTextView"
+                android:id="@+id/groupMembersName"
+                android:singleLine="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <ImageView
             android:id="@+id/optionMenu"

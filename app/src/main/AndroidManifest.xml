@@ -25,7 +25,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="q">
-        <activity android:name=".activities.InviteActivity"></activity>
+        <activity android:name=".activities.ChangePasswordActivity"></activity>
+        <activity android:name=".activities.AddDogActivity" />
+        <activity android:name=".activities.InviteActivity" />
         <activity android:name=".activities.CreateGroupActivity" />
         <activity android:name=".activities.PetPassActivity" />
         <activity
@@ -57,9 +59,8 @@
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name="com.walky.common.ui.login.LoginActivity" />
 
+        <service android:name="com.walky.services.FFMpegService" />
 
-
-        <service android:name="com.walky.services.FFMpegService"/>
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

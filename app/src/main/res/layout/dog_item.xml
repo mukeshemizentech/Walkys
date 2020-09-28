@@ -17,8 +17,8 @@
             app:riv_border_width="2dp"
             app:riv_corner_radius="@dimen/_20sdp"
             android:id="@+id/dogPic"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:src="@drawable/dog_image" />
 
         <TextView
@@ -38,8 +38,8 @@
         <ImageView
             android:id="@+id/selectIv"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:src="@drawable/select_item"
             android:background="@drawable/round_prim"
             app:tint="@color/white"
